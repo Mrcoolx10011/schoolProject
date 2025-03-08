@@ -1,15 +1,16 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const SchoolInfoContainer = styled.div`
   min-height: 100vh; /* Cover the entire page */
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.backgroundGradientStart}, ${({ theme }) => theme.colors.backgroundGradientEnd});
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
   padding: 4rem 2rem;
   text-align: center;
 `;
 
 const Title = styled.h1`
   font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -20,11 +21,11 @@ const Title = styled.h1`
 
 const Description = styled.p`
   font-size: 1.25rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.white};
   max-width: 800px;
   margin: 0 auto 3rem auto;
   line-height: 1.8;
-
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: 1rem;
   }
@@ -81,28 +82,36 @@ const SchoolInfo = () => {
     <SchoolInfoContainer>
       <Title>About Our School</Title>
       <Description>
-        Our school is dedicated to providing a nurturing and inclusive environment where students can grow academically, socially, and emotionally. Learn more about our history, mission, and values below.
+        Our school is dedicated to providing a nurturing and inclusive
+        environment where students can grow academically, socially, and
+        emotionally. Learn more about our history, mission, and values below.
       </Description>
       <CardContainer>
         <Card>
           <Icon>📚</Icon>
           <CardTitle>Our History</CardTitle>
           <CardText>
-            Established in 1995, our school has a rich history of academic excellence and community involvement. We take pride in our legacy of shaping future leaders.
+            Established in 1995, our school has a rich history of academic
+            excellence and community involvement. We take pride in our legacy of
+            shaping future leaders.
           </CardText>
         </Card>
         <Card>
           <Icon>🎯</Icon>
           <CardTitle>Our Mission</CardTitle>
           <CardText>
-            Our mission is to empower students with the knowledge, skills, and values they need to succeed in a rapidly changing world. We focus on holistic development and lifelong learning.
+            Our mission is to empower students with the knowledge, skills, and
+            values they need to succeed in a rapidly changing world. We focus on
+            holistic development and lifelong learning.
           </CardText>
         </Card>
         <Card>
           <Icon>❤️</Icon>
           <CardTitle>Our Values</CardTitle>
           <CardText>
-            We believe in integrity, respect, and inclusivity. These core values guide everything we do, from classroom instruction to extracurricular activities.
+            We believe in integrity, respect, and inclusivity. These core values
+            guide everything we do, from classroom instruction to
+            extracurricular activities.
           </CardText>
         </Card>
       </CardContainer>
