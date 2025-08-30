@@ -1,121 +1,97 @@
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import { PageContainer, Title, Section, SubTitle, Text, Card, Grid } from '../styles/SharedStyles';
 
-const SchoolInfoContainer = styled.div`
-  min-height: 100vh; /* Cover the entire page */
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.white};
-  padding: 4rem 2rem;
+const TeamCard = styled(Card)`
   text-align: center;
-`;
 
-const Title = styled.h1`
-  font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.white};
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: 2rem;
+  svg {
+    width: 100px; /* Adjusted size for team icons */
+    height: 100px; /* Adjusted size for team icons */
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid ${({ theme }) => theme.colors.primary};
+    fill: ${({ theme }) => theme.colors.primary}; /* Icon color */
   }
-`;
 
-const Description = styled.p`
-  font-size: 1.25rem;
-  color: ${({ theme }) => theme.colors.white};
-  max-width: 800px;
-  margin: 0 auto 3rem auto;
-  line-height: 1.8;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    font-size: 1rem;
+  h3 {
+    color: ${({ theme }) => theme.colors.text};
+    margin-bottom: 0.5rem;
   }
-`;
 
-const CardContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    flex-direction: column;
-    align-items: center;
+  p {
+    color: ${({ theme }) => theme.colors.secondary};
+    font-size: 0.9rem;
   }
-`;
-
-const Card = styled.div`
-  background: ${({ theme }) => theme.colors.white};
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  }
-`;
-
-const CardTitle = styled.h3`
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.primary};
-  margin-bottom: 1rem;
-`;
-
-const CardText = styled.p`
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.text};
-  line-height: 1.6;
-`;
-
-const Icon = styled.div`
-  font-size: 2rem;
-  color: ${({ theme }) => theme.colors.secondary};
-  margin-bottom: 1rem;
 `;
 
 const SchoolInfo = () => {
   return (
-    <SchoolInfoContainer>
-      <Title>About Our School</Title>
-      <Description>
-        Our school is dedicated to providing a nurturing and inclusive
-        environment where students can grow academically, socially, and
-        emotionally. Learn more about our history, mission, and values below.
-      </Description>
-      <CardContainer>
-        <Card>
-          <Icon>📚</Icon>
-          <CardTitle>Our History</CardTitle>
-          <CardText>
-            Established in 1995, our school has a rich history of academic
-            excellence and community involvement. We take pride in our legacy of
-            shaping future leaders.
-          </CardText>
-        </Card>
-        <Card>
-          <Icon>🎯</Icon>
-          <CardTitle>Our Mission</CardTitle>
-          <CardText>
-            Our mission is to empower students with the knowledge, skills, and
-            values they need to succeed in a rapidly changing world. We focus on
-            holistic development and lifelong learning.
-          </CardText>
-        </Card>
-        <Card>
-          <Icon>❤️</Icon>
-          <CardTitle>Our Values</CardTitle>
-          <CardText>
-            We believe in integrity, respect, and inclusivity. These core values
-            guide everything we do, from classroom instruction to
-            extracurricular activities.
-          </CardText>
-        </Card>
-      </CardContainer>
-    </SchoolInfoContainer>
+    <PageContainer>
+      <Title>About Samkay Public School</Title>
+
+      <Section>
+        <SubTitle>Our History</SubTitle>
+        <Text>
+          Founded in 1985, Samkay Public School has a rich history of academic excellence and community service. What began as a small institution with a vision to provide quality education has grown into a renowned educational hub, shaping the lives of thousands of students over the decades.
+        </Text>
+        <Text>
+          Our journey has been marked by continuous innovation, dedicated faculty, and a commitment to nurturing well-rounded individuals. We pride ourselves on our inclusive environment and our ability to adapt to modern educational needs while preserving our core values.
+        </Text>
+      </Section>
+
+      <Section>
+        <SubTitle>Mission & Vision</SubTitle>
+        <Text>
+          <strong style={{ color: ({ theme }) => theme.colors.text }}>Mission:</strong> To empower students with knowledge, skills, and values to become responsible global citizens and lifelong learners.
+        </Text>
+        <Text>
+          <strong style={{ color: ({ theme }) => theme.colors.text }}>Vision:</strong> To be a leading educational institution recognized for its academic rigor, innovative pedagogy, and commitment to fostering creativity, critical thinking, and social responsibility.
+        </Text>
+      </Section>
+
+      <Section>
+        <SubTitle>Our Values</SubTitle>
+        <ul>
+          <li style={{ color: ({ theme }) => theme.colors.secondary }}><strong style={{ color: ({ theme }) => theme.colors.text }}>Excellence:</strong> Striving for the highest standards in all endeavors.</li>
+          <li style={{ color: ({ theme }) => theme.colors.secondary }}><strong style={{ color: ({ theme }) => theme.colors.text }}>Integrity:</strong> Upholding honesty, ethics, and moral principles.</li>
+          <li style={{ color: ({ theme }) => theme.colors.secondary }}><strong style={{ color: ({ theme }) => theme.colors.text }}>Respect:</strong> Fostering an environment of mutual respect and understanding.</li>
+          <li style={{ color: ({ theme }) => theme.colors.secondary }}><strong style={{ color: ({ theme }) => theme.colors.text }}>Innovation:</strong> Embracing new ideas and creative approaches to learning.</li>
+          <li style={{ color: ({ theme }) => theme.colors.secondary }}><strong style={{ color: ({ theme }) => theme.colors.text }}>Community:</strong> Building a strong, supportive, and inclusive school community.</li>
+        </ul>
+      </Section>
+
+      <Section>
+        <SubTitle>Leadership Team</SubTitle>
+        <Grid>
+          <TeamCard>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <h3>Dr. Ananya Sharma</h3>
+            <p>Principal</p>
+            <Text>With over 25 years of experience in education, Dr. Sharma leads our school with a vision for academic and holistic development.</Text>
+          </TeamCard>
+          <TeamCard>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <h3>Mr. Rajeev Kumar</h3>
+            <p>Vice Principal</p>
+            <Text>Mr. Kumar is instrumental in curriculum development and student welfare, bringing innovative educational strategies.</Text>
+          </TeamCard>
+          <TeamCard>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <h3>Ms. Priya Singh</h3>
+            <p>Head of Academics</p>
+            <Text>Ms. Singh oversees all academic programs, ensuring high-quality instruction and learning outcomes.</Text>
+          </TeamCard>
+        </Grid>
+      </Section>
+
+    </PageContainer>
   );
 };
 
