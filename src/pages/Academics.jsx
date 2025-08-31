@@ -23,7 +23,7 @@ const Academics = () => {
 
       <Section>
         <Text>
-          At Samkay Public School, we are committed to providing a holistic and rigorous academic experience that prepares students for success in a rapidly changing world. Our curriculum is designed to foster critical thinking, creativity, and a lifelong love for learning.
+          At Samyak Global Academy, we are committed to providing a holistic and rigorous academic experience that prepares students for success in a rapidly changing world. Our curriculum is designed to foster critical thinking, creativity, and a lifelong love for learning.
         </Text>
         <Text>
           We follow the Central Board of Secondary Education (CBSE) curriculum, integrating innovative teaching methodologies and a student-centered approach.

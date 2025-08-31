@@ -43,7 +43,7 @@ const Facilities = () => {
 
       <Section>
         <Text>
-          Samkay Public School provides state-of-the-art facilities designed to create an optimal learning environment and support the holistic development of our students. We believe that a conducive infrastructure plays a crucial role in academic and extracurricular pursuits.
+          Samyak Global Academy provides state-of-the-art facilities designed to create an optimal learning environment and support the holistic development of our students. We believe that a conducive infrastructure plays a crucial role in academic and extracurricular pursuits.
         </Text>
       </Section>
 

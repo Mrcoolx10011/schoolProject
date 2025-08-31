@@ -42,12 +42,12 @@ const TeamCard = styled(Card)`
 const SchoolInfo = () => {
   return (
     <PageContainer>
-      <Title>About Samkay Public School</Title>
+      <Title>About Samyak Global Academy</Title>
 
       <Section>
         <SubTitle>Our History</SubTitle>
         <Text>
-          Founded in 1985, Samkay Public School has a rich history of academic excellence and community service. What began as a small institution with a vision to provide quality education has grown into a renowned educational hub, shaping the lives of thousands of students over the decades.
+          Founded in 1985, Samyak Global Academy has a rich history of academic excellence and community service. What began as a small institution with a vision to provide quality education has grown into a renowned educational hub, shaping the lives of thousands of students over the decades.
         </Text>
         <Text>
           Our journey has been marked by continuous innovation, dedicated faculty, and a commitment to nurturing well-rounded individuals. We pride ourselves on our inclusive environment and our ability to adapt to modern educational needs while preserving our core values.

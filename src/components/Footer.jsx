@@ -105,7 +105,7 @@ const Footer = () => {
         </FooterSection>
       </FooterContent>
       <BottomBar>
-        <p>&copy; 2025 Samkay Public School. All rights reserved.</p>
+        <p>&copy; 2025 Samyak Global Academy. All rights reserved.</p>
       </BottomBar>
     </FooterContainer>
   );

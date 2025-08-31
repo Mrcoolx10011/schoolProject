@@ -140,9 +140,9 @@ const ContactUs = () => {
           </ContactInfoCard>
           <ContactInfoCard>
             <h3>Address</h3>
-            <p>Samkay Public School</p>
-            <p>123 School Lane, Education City</p>
-            <p>State, Pincode 123456</p>
+            <p>Samyak Global Academy</p>
+            <p>WG45+P37, Naudhiya</p>
+            <p>Uttar Pradesh 230141</p>
             <p>India</p>
           </ContactInfoCard>
         </ContactGrid>
@@ -163,14 +163,14 @@ const ContactUs = () => {
         <SubTitle>Our Location</SubTitle>
         <MapContainer>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115450.41846959553!2d81.8219572765386!3d25.908076632731837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398516d006198f8b%3A0x6b772c72b26090c2!2sPratapgarh%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1678891234567!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.089069720515!2d81.94042867500168!3d25.43722747758369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39853905e94f30d3%3A0x89d2d0f0d2c0b2d7!2sSamyak%20Global%20Academy!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Pratapgarh, UP Location"
+            title="Samyak Global Academy, Naudhiya, Uttar Pradesh Location"
           ></iframe>
         </MapContainer>
       </Section>

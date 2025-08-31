@@ -42,7 +42,7 @@ const Admissions = () => {
 
       <Section>
         <Text>
-          Welcome to Samkay Public School! We are delighted that you are considering our school for your child's education. Our admission process is designed to be transparent and straightforward, ensuring a smooth experience for prospective families.
+          Welcome to Samyak Global Academy! We are delighted that you are considering our school for your child's education. Our admission process is designed to be transparent and straightforward, ensuring a smooth experience for prospective families.
         </Text>
         <Text>
           We believe in nurturing young minds in a supportive and stimulating environment. Admissions are open for various grades, and we encourage early applications.

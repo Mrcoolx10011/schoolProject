@@ -55,7 +55,7 @@ const NewsEvents = () => {
 
       <Section>
         <Text>
-          Stay up-to-date with the latest happenings at Samkay Public School! This section features important announcements, upcoming events, and highlights from our school community.
+          Stay up-to-date with the latest happenings at Samyak Global Academy! This section features important announcements, upcoming events, and highlights from our school community.
         </Text>
       </Section>
 

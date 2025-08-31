@@ -347,12 +347,12 @@ const Home = () => {
           <span>S</span>
           <span>a</span>
           <span>m</span>
-          <span>k</span>
-          <span>a</span>
           <span>y</span>
+          <span>a</span>
+          <span>k</span>
         </Title>
         <Description>
-          Discover excellence in education at Samkay Public School
+          Discover excellence in education at Samyak Global Academy
         </Description>
         <ButtonContainer>
           <PrimaryButton to="/admissions">Apply Now</PrimaryButton>
@@ -396,7 +396,7 @@ const Home = () => {
       <EventsSection>
         <Title>Our Events & Campus Life</Title>
         <Description>
-          Catch a glimpse of the vibrant activities and memorable moments that define student life at Samkay Public School.
+          Catch a glimpse of the vibrant activities and memorable moments that define student life at Samyak Global Academy.
         </Description>
         <EventsGrid>
           <EventPhotoCard>
@@ -471,7 +471,7 @@ const Home = () => {
       <TestimonialsSection>
         <Title>What Our Community Says</Title>
         <Description>
-          Hear from our students, parents, and alumni about their experiences at Samkay Public School.
+          Hear from our students, parents, and alumni about their experiences at Samyak Global Academy.
         </Description>
         <TestimonialsGrid>
           <TestimonialCard>
