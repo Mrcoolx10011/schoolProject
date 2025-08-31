@@ -12,13 +12,16 @@ import Careers from './pages/Careers';
 import GlobalStyles from './styles/GlobalStyles';
 import theme from './styles/theme';
 import { ThemeProvider } from 'styled-components';
+import { useState } from 'react';
 
 const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <GlobalStyles />
-        <Header />
+        <GlobalStyles isOpen={isMenuOpen} />
+        <Header isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/academics" element={<Academics />} />

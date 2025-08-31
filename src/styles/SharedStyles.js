@@ -4,19 +4,25 @@ export const PageContainer = styled.div`
   min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
-  padding: 4rem 2rem;
+  padding: ${({ theme }) => theme.spacing.section} ${({ theme }) => theme.spacing.xl};
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: ${({ theme }) => theme.spacing.xl} ${({ theme }) => theme.spacing.md};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.sm};
+  }
 `;
 
 export const Title = styled.h1`
-  font-size: 2.5rem;
+  ${({ theme }) => theme.typography.h1}
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 2rem;
-  font-family: 'Google Sans', Arial, sans-serif;
-  font-weight: 400;
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: ${({ theme }) => theme.spacing.md};
   text-align: center;
   
   &::after {
@@ -29,30 +35,54 @@ export const Title = styled.h1`
     height: 4px;
     background-color: ${({ theme }) => theme.colors.primary};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-bottom: ${({ theme }) => theme.spacing.lg};
+    padding-bottom: ${({ theme }) => theme.spacing.sm};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-bottom: ${({ theme }) => theme.spacing.md};
+    padding-bottom: ${({ theme }) => theme.spacing.xs};
+  }
 `;
 
 export const Section = styled.section`
-  margin-bottom: 3rem;
+  margin-bottom: ${({ theme }) => theme.spacing.xxl};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-bottom: ${({ theme }) => theme.spacing.xl};
+  }
 `;
 
 export const SubTitle = styled.h2`
+  ${({ theme }) => theme.typography.h2}
   color: ${({ theme }) => theme.colors.primary};
-  font-family: 'Google Sans', Arial, sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-bottom: ${({ theme }) => theme.spacing.md};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-bottom: ${({ theme }) => theme.spacing.sm};
+  }
 `;
 
 export const Text = styled.p`
+  ${({ theme }) => theme.typography.body1}
   color: ${({ theme }) => theme.colors.secondary};
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-bottom: ${({ theme }) => theme.spacing.sm};
+  }
 `;
 
 export const Card = styled.div`
   background-color: ${({ theme }) => theme.colors.cardBackground};
   border-radius: 8px;
-  padding: 2rem;
+  padding: ${({ theme }) => theme.spacing.lg};
   box-shadow: ${({ theme }) => theme.colors.cardShadow};
   transition: transform 0.2s, box-shadow 0.2s;
   
@@ -60,24 +90,40 @@ export const Card = styled.div`
     transform: translateY(-4px);
     box-shadow: ${({ theme }) => theme.elevation[2]};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: ${({ theme }) => theme.spacing.md};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: ${({ theme }) => theme.spacing.sm};
+  }
 `;
 
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
+  gap: ${({ theme }) => theme.spacing.xl};
+  margin: ${({ theme }) => theme.spacing.xl} 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: ${({ theme }) => theme.spacing.lg};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr; /* Stack items vertically on mobile */
+    gap: ${({ theme }) => theme.spacing.md};
+  }
 `;
 
 export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.primary};
   color: #fff;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
   border-radius: 4px;
-  font-family: 'Google Sans', Arial, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
+  ${({ theme }) => theme.typography.button}
   cursor: pointer;
   transition: background-color 0.2s;
 

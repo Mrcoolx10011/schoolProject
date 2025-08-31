@@ -14,10 +14,11 @@ const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
   }
 `;
 
@@ -37,7 +38,7 @@ const Logo = styled.h1`
     &:nth-child(6) { color: #ea4335; }
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 1.25rem;
   }
 `;
@@ -46,7 +47,7 @@ const Nav = styled.nav`
   display: flex;
   gap: 1rem;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
@@ -56,6 +57,11 @@ const Nav = styled.nav`
     padding: 1rem;
     border-radius: 8px;
     box-shadow: ${({ theme }) => theme.elevation[1]};
+    position: absolute; /* Position the nav absolutely */
+    top: 100%; /* Position it right below the header */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Take full width */
+    box-sizing: border-box; /* Include padding in width */
   }
 `;
 
@@ -64,9 +70,10 @@ const NavGroup = styled.div`
   gap: 1rem;
   align-items: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: column;
     width: 100%;
+    gap: 0.5rem; /* Adjust gap for vertical stacking */
   }
 `;
 
@@ -86,7 +93,7 @@ const ActionButton = styled(Link)`
     color: #fff;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 100%;
     text-align: center;
   }
@@ -112,7 +119,7 @@ const NavLink = styled(Link)`
     background-color: ${({ theme }) => theme.colors.hoverBackground};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 0.75rem 1rem;
     width: 100%;
     border-radius: 0;
@@ -134,7 +141,7 @@ const MenuButton = styled.button`
     background-color: ${({ theme }) => theme.colors.surface};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: block;
   }
 `;
@@ -154,7 +161,7 @@ const ToggleButton = styled.button`
     background-color: ${({ theme }) => theme.colors.surface};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     margin-left: 0;
     margin-top: 1rem;
     width: 100%;
@@ -163,8 +170,16 @@ const ToggleButton = styled.button`
   }
 `;
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const ToggleWrapper = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the toggle button on mobile */
+    margin-top: 0.5rem;
+  }
+`;
+
+const Header = ({ isOpen, setIsOpen }) => {
   const { currentTheme, toggleTheme } = useTheme();
 
   const toggleMenu = () => {
@@ -194,9 +209,11 @@ const Header = () => {
         <NavGroup>
           <NavLink to="/contact-us" onClick={() => setIsOpen(false)}>Contact</NavLink>
           <ActionButton to="/admissions" onClick={() => setIsOpen(false)}>Apply Now</ActionButton>
-          <ToggleButton onClick={toggleTheme}>
-            {currentTheme === 'light' ? '🌙' : '☀️'}
-          </ToggleButton>
+          <ToggleWrapper>
+            <ToggleButton onClick={toggleTheme}>
+              {currentTheme === 'light' ? '🌙' : '☀️'}
+            </ToggleButton>
+          </ToggleWrapper>
         </NavGroup>
       </Nav>
     </HeaderContainer>

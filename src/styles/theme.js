@@ -54,9 +54,9 @@ const theme = {
       desktop: '1024px',
     },
     elevation: {
-      1: '0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15)',
-      2: '0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15)',
-      3: '0 4px 4px 0 rgba(60,64,67,0.3), 0 8px 12px 6px rgba(60,64,67,0.15)'
+      1: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+      2: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+      3: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)'
     }
   },
   dark: {
@@ -69,9 +69,9 @@ const theme = {
       desktop: '1024px',
     },
     elevation: {
-      1: '0 1px 2px 0 rgba(0,0,0,0.5), 0 1px 3px 1px rgba(0,0,0,0.3)',
-      2: '0 1px 3px 0 rgba(0,0,0,0.5), 0 4px 8px 3px rgba(0,0,0,0.3)',
-      3: '0 4px 4px 0 rgba(0,0,0,0.5), 0 8px 12px 6px rgba(0,0,0,0.3)'
+      1: '0 1px 3px rgba(0,0,0,0.20), 0 1px 2px rgba(0,0,0,0.30)',
+      2: '0 3px 6px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.35)',
+      3: '0 10px 20px rgba(0,0,0,0.22), 0 6px 6px rgba(0,0,0,0.32)'
     }
   }
 };

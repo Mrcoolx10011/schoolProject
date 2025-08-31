@@ -8,6 +8,11 @@ const FacilityCard = styled(Card)`
   h3 {
     color: ${({ theme }) => theme.colors.primary};
     margin-bottom: 1rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
   }
 
   svg {
@@ -15,10 +20,19 @@ const FacilityCard = styled(Card)`
     height: 60px;
     margin-bottom: 1rem;
     fill: ${({ theme }) => theme.colors.primary};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.75rem;
+    }
   }
 
   p {
     color: ${({ theme }) => theme.colors.secondary};
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 0.85rem;
+    }
   }
 `;
 

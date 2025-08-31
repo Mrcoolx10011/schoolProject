@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PageContainer, Title, Section, SubTitle, Text, Card, Button } from '../styles/SharedStyles';
+import { PageContainer, Title, Section, SubTitle, Text, Card, Button, Grid } from '../styles/SharedStyles';
 
 const JobCard = styled(Card)`
   text-align: left;
@@ -9,18 +9,30 @@ const JobCard = styled(Card)`
     color: ${({ theme }) => theme.colors.primary};
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 1.1rem;
+    }
   }
 
   p {
     font-size: 0.9rem;
     color: ${({ theme }) => theme.colors.secondary};
     margin-bottom: 0.5rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 0.85rem;
+    }
   }
 
   .location {
     font-size: 0.8rem;
     color: ${({ theme }) => theme.colors.secondary};
     margin-bottom: 1rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 0.75rem;
+    }
   }
 `;
 
@@ -40,7 +52,7 @@ const Careers = () => {
 
       <Section>
         <SubTitle>Current Openings</SubTitle>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '1.5rem' }}>
+        <Grid style={{ marginTop: '1.5rem' }}>
           <JobCard>
             <h3>Primary School Teacher</h3>
             <p className="location">Location: Education City, India</p>
@@ -65,7 +77,7 @@ const Careers = () => {
             <Text>A dedicated sports coach with expertise in various sports to foster physical fitness and teamwork among students.</Text>
             <Button as="a" href="mailto:careers@samkayschool.edu?subject=Application for Sports Coach">Apply Now</Button>
           </JobCard>
-        </div>
+        </Grid>
       </Section>
 
       <Section>

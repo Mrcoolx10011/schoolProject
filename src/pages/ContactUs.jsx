@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PageContainer, Title, Section, SubTitle, Text, Card, Button } from '../styles/SharedStyles';
+import { PageContainer, Title, Section, SubTitle, Text, Card, Button, Grid } from '../styles/SharedStyles';
 
-const ContactGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+const ContactGrid = styled(Grid)`
   margin-top: 2rem;
 `;
 
@@ -15,11 +12,20 @@ const ContactInfoCard = styled(Card)`
   h3 {
     color: ${({ theme }) => theme.colors.primary};
     margin-bottom: 1rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
   }
 
   p {
     margin-bottom: 0.5rem;
     color: ${({ theme }) => theme.colors.secondary};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 0.85rem;
+    }
   }
 
   a {
@@ -40,6 +46,18 @@ const ContactForm = styled.form`
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  position: sticky; /* Make the form sticky */
+  top: ${({ theme }) => theme.spacing.xl}; /* Position it from the top, considering header height */
+  z-index: 10; /* Ensure it stays above other content */
+  padding: ${({ theme }) => theme.spacing.md}; /* Add padding for better appearance */
+  background-color: ${({ theme }) => theme.colors.cardBackground}; /* Ensure background for sticky effect */
+  border-radius: 8px; /* Match card styling */
+  box-shadow: ${({ theme }) => theme.elevation[1]}; /* Add a subtle shadow */
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    max-width: 100%;
+    padding: 0 1rem; /* Add horizontal padding */
+  }
 
   input,
   textarea {
@@ -51,6 +69,11 @@ const ContactForm = styled.form`
     transition: all 0.2s ease;
     color: ${({ theme }) => theme.colors.text};
     background-color: ${({ theme }) => theme.colors.cardBackground};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
 
     &:focus {
       border-color: ${({ theme }) => theme.colors.primary};
@@ -72,7 +95,7 @@ const MapContainer = styled.div`
   width: 100%;
   height: 400px;
   background-color: ${({ theme }) => theme.colors.surface};
-  margin-top: 2rem;
+  margin-top: calc(500px + ${({ theme }) => theme.spacing.xl}); /* Adjust margin-top to account for sticky form height + spacing */
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -80,6 +103,16 @@ const MapContainer = styled.div`
   color: ${({ theme }) => theme.colors.secondary};
   font-size: 1.2rem;
   border: 1px solid ${({ theme }) => theme.colors.border};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: 350px;
+    margin-top: calc(400px + ${({ theme }) => theme.spacing.lg}); /* Adjust for tablet sticky form height */
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    height: 250px; /* Further adjust map height for smaller screens */
+    margin-top: calc(300px + ${({ theme }) => theme.spacing.md}); /* Adjust for mobile sticky form height */
+  }
 `;
 
 const ContactUs = () => {
@@ -129,7 +162,16 @@ const ContactUs = () => {
       <Section>
         <SubTitle>Our Location</SubTitle>
         <MapContainer>
-          [Google Map Placeholder]
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115450.41846959553!2d81.8219572765386!3d25.908076632731837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398516d006198f8b%3A0x6b772c72b26090c2!2sPratapgarh%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1678891234567!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Pratapgarh, UP Location"
+          ></iframe>
         </MapContainer>
       </Section>
 

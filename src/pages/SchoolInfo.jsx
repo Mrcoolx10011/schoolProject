@@ -12,16 +12,30 @@ const TeamCard = styled(Card)`
     margin-bottom: 1rem;
     border: 3px solid ${({ theme }) => theme.colors.primary};
     fill: ${({ theme }) => theme.colors.primary}; /* Icon color */
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 0.75rem;
+    }
   }
 
   h3 {
     color: ${({ theme }) => theme.colors.text};
     margin-bottom: 0.5rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 1.1rem;
+    }
   }
 
   p {
     color: ${({ theme }) => theme.colors.secondary};
     font-size: 0.9rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 0.8rem;
+    }
   }
 `;
 

@@ -27,8 +27,12 @@ const Title = styled.h1`
     &:nth-child(6) { color: #ea4335; }
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 3rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 2.25rem; /* Even smaller font for very small mobiles */
   }
 `;
 
@@ -41,7 +45,7 @@ const Description = styled.p`
   text-align: center;
   font-family: 'Roboto', Arial, sans-serif;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 1rem;
     padding: 0 1rem;
   }
@@ -53,7 +57,7 @@ const ButtonContainer = styled.div`
   margin: 2rem 0;
   justify-content: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: column;
     width: 80%;
     max-width: 300px;
@@ -84,7 +88,7 @@ const PrimaryButton = styled(Link)`
     box-shadow: ${({ theme }) => theme.elevation[1]};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 100%;
   }
 `;
@@ -112,7 +116,7 @@ const SecondaryButton = styled(Link)`
     box-shadow: ${({ theme }) => theme.elevation[1]};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 100%;
   }
 `;
@@ -124,12 +128,28 @@ const HeroSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: 3rem 1rem; /* Adjust padding for tablets */
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 2rem 1rem; /* Adjust padding for mobiles */
+  }
 `;
 
 const FeaturesSection = styled.section`
   background: ${({ theme }) => theme.colors.surface};
   width: 100%;
   padding: 4rem 2rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding: 3rem 1rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const FeatureGrid = styled.div`
@@ -139,6 +159,16 @@ const FeatureGrid = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr; /* Stack items vertically on mobile */
+    gap: 1rem;
+  }
 `;
 
 const FeatureCard = styled.div`
@@ -190,6 +220,16 @@ const EventsGrid = styled.div`
   max-width: 1200px;
   margin: 2rem auto;
   width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
 `;
 
 const EventPhotoCard = styled.div`
@@ -246,6 +286,16 @@ const TestimonialsGrid = styled.div`
   max-width: 1200px;
   margin: 2rem auto;
   width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const TestimonialCard = styled.div`

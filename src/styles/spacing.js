@@ -1,9 +1,9 @@
 export const spacing = {
-  xs: '0.25rem',
-  sm: '0.5rem',
+  xs: '0.3rem',
+  sm: '0.6rem',
   md: '1rem',
-  lg: '1.5rem',
-  xl: '2rem',
-  xxl: '3rem',
-  section: '4rem'
+  lg: '1.8rem',
+  xl: '2.5rem',
+  xxl: '3.5rem',
+  section: '5rem'
 };

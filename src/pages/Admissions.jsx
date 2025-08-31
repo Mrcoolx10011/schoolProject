@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PageContainer, Title, Section, SubTitle, Text, Card, Button } from '../styles/SharedStyles';
+import { PageContainer, Title, Section, SubTitle, Text, Card, Button, Grid } from '../styles/SharedStyles';
 
-const AdmissionsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+const AdmissionsGrid = styled(Grid)`
   margin-top: 2rem;
 `;
 
@@ -15,6 +12,11 @@ const StepCard = styled(Card)`
   h3 {
     color: ${({ theme }) => theme.colors.primary};
     margin-bottom: 1rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
   }
 
   ul {
@@ -26,6 +28,10 @@ const StepCard = styled(Card)`
     margin-bottom: 0.5rem;
     color: ${({ theme }) => theme.colors.secondary};
     font-size: 0.95rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 0.85rem;
+    }
   }
 `;
 

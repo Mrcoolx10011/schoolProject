@@ -16,6 +16,12 @@ const FooterContent = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   text-align: left;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr; /* Stack items vertically on mobile */
+    gap: 1.5rem; /* Adjust gap for mobile */
+    padding: 0 1rem; /* Add horizontal padding */
+  }
 `;
 
 const FooterSection = styled.div`
@@ -45,6 +51,10 @@ const FooterSection = styled.div`
     &:hover {
       color: ${({ theme }) => theme.colors.primary};
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    text-align: center; /* Center text on mobile */
   }
 `;
 

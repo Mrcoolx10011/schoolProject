@@ -10,23 +10,41 @@ const EventCard = styled(Card)`
     height: 60px;
     margin-bottom: 1rem;
     fill: ${({ theme }) => theme.colors.primary};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.75rem;
+    }
   }
 
   h3 {
     color: ${({ theme }) => theme.colors.primary};
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 1.1rem;
+    }
   }
 
   p {
     font-size: 0.9rem;
     color: ${({ theme }) => theme.colors.secondary};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 0.85rem;
+    }
   }
 
   .date {
     font-size: 0.8rem;
     color: ${({ theme }) => theme.colors.secondary};
     margin-bottom: 1rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 0.75rem;
+    }
   }
 `;
 
